@@ -4,10 +4,10 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development expo start",
-    "android:go": "cross-env NODE_ENV=production  expo start --android",
-    "ios:go": "cross-env NODE_ENV=production  expo start --ios",
+    "android:go": "cross-env NODE_ENV=development  expo start --android",
+    "ios:go": "cross-env NODE_ENV=development  expo start --ios",
     "android": "expo run:android",
-    "web": "cross-env NODE_ENV=production  expo start --web"
+    "web": "cross-env NODE_ENV=development  expo start --web"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
