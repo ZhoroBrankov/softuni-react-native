@@ -18,14 +18,14 @@ export default function MainScreen() {
     const { logout, user } = useUserContext();
 
     useEffect(() => {
-        // axios.get('http://192.168.1.211:4000/messages')
+        // axios.get('${process.env.EXPO_PUBLIC_API_UR}/messages')
         //     .then(response => {
         //         setMessages(response.data);
         //     })
         //     .catch(error => {
         //         console.error('Failed to load messages', error);
         //     });
-        fetch('http://192.168.1.211:4000/messages')
+        fetch('${process.env.EXPO_PUBLIC_API_UR}/messages')
             .then(response => response.json())
             .then(data => setMessages(data))
             .catch(error => console.error('Failed to load messages', error.message));
@@ -39,7 +39,7 @@ export default function MainScreen() {
             timestamp: new Date().toISOString(),
         };
 
-        axios.post('http://192.168.1.211:4000/messages', newMessage)
+        axios.post('${process.env.EXPO_PUBLIC_API_UR}/messages', newMessage)
             .then(response => {
                 setMessages(prevMessages => [...prevMessages, response.data]);
                 setMessageText('');
